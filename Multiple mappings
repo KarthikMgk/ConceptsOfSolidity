@@ -1,0 +1,18 @@
+contract solidity{
+  struct cupckae{
+    string name;
+    uint rating;
+  }
+  
+  cupcake[] public cups;
+  
+  mappings(uint => address) cupcakecount; // Here we say "map uint(number of cupcakes) => address(cupcake owner)"
+  mappings(address => uint) cupcakeownedbykid; // Here we are binding address to a number to determine the no.of cupcakes owned by any address
+  
+  function _createcupcake(string _name, uint_ rating){
+    uint id = cups.push(cupcake(_name, _rating))-1;
+    cupcakecount[id] = msg.sender; // This means last cupcake pushed belong to kid who's address called the function(msg.sender)
+    cupcakeownedbykid[msg.sender]++; // This means increase the count of cupcakes owned by the kid by one
+  }
+}
+
