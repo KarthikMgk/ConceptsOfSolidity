@@ -1,0 +1,32 @@
+Mappings are such a powerful feature of solidity. Mappings allow you to connect a datatype with another datatype. 
+For example, 
+
+1) mapping(address => uint) public addressTo_uint; 
+
+// Here I'am binding the address datatype in my contracts to uint datatypes through a private link called Mappings and finally giving them a name 
+addressTo_uint to reference them
+
+This is the basis of Mappings and lets see a simple example:
+
+
+contract six{
+  mapping(address => uint) favnum;
+  
+  function setNum(uint _num) {
+    favnum[msg.sender] = _num;
+  }
+  
+  function getNum() public view returns(uint){
+    favnum[msg.sender];
+  }
+  
+}
+Line 12 we are defining the contract
+Line 13 we are setting the mapping i.e We are binding the address datatype to uint datatype and creating a special combination out of it 
+which is called the mapping and we are naming the mapping as favnum
+Line 15 we are making a function through we can get inputs from the user we are giving one parameter for the function to hold the value
+Line 16 we are asking the function to store the favorite number of the msg.sender(the person activating the function) to the uint vaiable called _num
+Line 19 is similart to setnum function here we get the number we stored. This function is public(accesible by anyone) and view(This function doesnt
+perform any calculations with the data in the contract)
+Line 20 Its simple here... The motto of this function is to return the favnum set by thr user, So we specify here as favnum[msg.sender](return the favnum set by 
+the msg.sender(address of the user))
