@@ -1,0 +1,22 @@
+Lets take about Inheritance.
+
+Inheritance is one of the words we usually use in object oriented programming.
+Inheritance is similar to that in OOP 
+
+If you are familiar with any OOP lang, Contract is the equivalent of class in OOP lang
+
+
+
+contract solidity1{
+  function superclass() public pure returns(string){
+    return "This is a superclass";
+  }
+}
+
+contract solidity2 is solidity1{
+  function subclass()public pure returns(string){
+    return "This is a subclass";
+  }
+}
+
+Line 16 we use 'is' keyword which basically means we are inherting one former contract from latter one
