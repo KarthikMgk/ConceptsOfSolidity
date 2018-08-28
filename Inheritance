@@ -19,4 +19,4 @@ contract solidity2 is solidity1{
   }
 }
 
-Line 16 we use 'is' keyword which basically means we are inherting one former contract from latter one
+Line 16 we use 'is' keyword which basically means we are inherting former contract from latter one
