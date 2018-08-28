@@ -1,0 +1,10 @@
+Require is an important functionality in Solidity. Its basically used for access control
+
+contract solidity{
+  function sayHi(string _name) pure {
+    require(keccak256(_name) == keccak256("karthik"));
+    return "Hi karthik";
+  }
+}
+
+Line 5 Only if keccak256 of value stored in _name variable matches keccak256 of karthik which is the username, function returns Hi else throws error
