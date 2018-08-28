@@ -1,0 +1,17 @@
+Import keyword is incorporated into a language to reduce code redudancy
+
+contract mobile{
+  function super() public pure {
+    return "return something"
+  }
+}
+
+
+import "./mobile.sol"
+contract phone{
+  function sub() pure public {
+    return "Again return something"
+  }
+}
+
+Considering the above two contracts are in two fdifferent files in the same directory, We can use the import statement to get function inside another function
