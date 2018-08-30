@@ -1,0 +1,9 @@
+We all know the functions of private and public access modifiers or visibility functions. In solidity, we get to know about a new type of access modifiers called 
+Internal and External. Both of them are used similar to how private and public access modifier are used, But they are a slightly tuned version
+of public and private thing
+
+Internal - The function deemed as internal is also accessible to the contract inherting from this contract
+External - External functions can be called ONLY outside the contract in which they are declared. Weird right?
+
+
+
