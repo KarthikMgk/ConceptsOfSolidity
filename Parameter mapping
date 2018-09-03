@@ -1,0 +1,27 @@
+Parameter mapping is a cool way to map variables, Lets see this example
+
+contract solidity{
+
+  function returnFirstValue(uint a, uint b) returns(uint){
+    return a;
+  }
+  
+  function caller() public returns(uint){
+    return returnFirstValue(1,5);
+  }
+}
+
+//The above contracts returns the value of a in this case its "1"
+
+What if we need to make it output the other value in this its 5??
+Here we use parameter mapping. We basically use Json here, See the example
+
+contract Solidity{
+  function returnFirstValue(uint a, uint b) returns(uint){
+    return a;
+  }
+  
+  function caller() public returns(uint){
+    return returnFirstValue({b:1, a:5}) // Here I have used json like object notation to assign value, This function returns value of a as "5"
+  }
+}
