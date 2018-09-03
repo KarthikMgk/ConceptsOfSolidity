@@ -1,0 +1,11 @@
+The keccak256 is the de facto hashing method in Solidity. Its very helpful in determining the integrity of anything in our contract
+Keywords can be used in conjuction with keccak256 to form control structures in our contract
+
+contract Solidity{
+  function somefunc(string _xname){
+    require(keccak256(_xname) == keccak256("Yourname")){
+      return("Hi");
+    }
+  }
+}
+
