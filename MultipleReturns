@@ -1,0 +1,31 @@
+As the name suggests, You can return multiple parameters of a function at the sametime and that too in a single line, Cool isn't it?
+Let see an example
+
+APPROACH 1:
+
+contract solidity{
+  function returnAll(uint a, uint b, uint c) returns(uint, uint, uint){
+    return(a,b,c);
+  }
+  function caller() public returns(uint, uint, uint){
+    return returnAll(5,6,7); //This line of code returns the variable in the order we declared in "returnAll" function which is a,b,c here
+  }
+}
+
+APPROACH 2:
+
+contract solidity{
+  function returnAllValues(uint a, uint b, uint c) returns(uint, uint, uint){
+    return(a,b,c);
+  }
+  function caller() public returns(uint, uint, uint){
+    // return returnAllValues(5,6,7);
+    
+    uint a;
+    uint b;
+    uint c;
+    (a,b,c) = returnAllValues(5,6,7);
+    return(a,b,c);
+  }
+  
+}
