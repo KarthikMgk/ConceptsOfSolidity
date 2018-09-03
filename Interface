@@ -1,0 +1,36 @@
+Interface functionality in solidity is very useful in implementation as it allows us to import and export the different functions of different contracts
+
+Rules:
+1. We should define a interface in the contract which we want others to use
+2. We can define the contract with access modifier as external to render it usable only by contracts outside our contract
+3. Lets Start coding...
+
+
+*****
+Contract solidity1{
+mapping(address => uint) number;
+
+contract Interface(){                                            // This is the interface which allows external contracts to access 
+  function getNum(address _myaddress) public view returns(uint){ //  the function I've defined below
+}
+function setNum(uint _num){
+  number[msg.sender] = _num;  
+}
+
+function getNum(address _myaddress) public view returns(uint){
+  return number[_myaddress];
+}
+
+
+
+*****
+contract solidity2{
+
+address interfaceAddress = "Address of the soldity1" //Note that "You can name interfaceAddress anything you want"
+Interface InterfaceContract = Interface[interfaceAddress]; // We are just making a pointer called InterfaceContract to point to new contract
+
+function newFunction() public {
+    // Now we can call `getNum` from that contract:
+    uint num = InterfaceContract.getNum(msg.sender);
+}
+*****
